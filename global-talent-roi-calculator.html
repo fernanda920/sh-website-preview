@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Global Talent ROI Calculator | Sellers Hub</title>
+<meta name="description" content="See what a global (offshore) sales hire actually saves you versus a US hire. Free ROI calculator from Sellers Hub: real cost comparison by role, time-to-fill, and salary reduction."/>
+<meta property="og:title" content="Global Talent ROI Calculator | Sellers Hub"/>
+<meta property="og:description" content="See what an offshore sales hire saves you versus a US hire, by role. A free tool from Sellers Hub."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --indigo:#333366; --indigo-lift:#454591; --indigo-deep:#2c2c55;
+    --cyan:#33CCCC; --cyan-deep:#1B9C9C; --cyan-dim:#E6F9F9;
+    --mint:#29CB8B; --mint-deep:#16895a; --mint-bg:#EAF8F1;
+    --slate:#5e5e70; --slate-bg:#F2F2F6;
+    --ink:#2b2b40; --body:#4c4c63; --muted:#8a8a9c;
+    --line:#E7E7F1; --line-strong:#C8CEDF; --white:#fff; --off-white:#F5F6FC; --surface:#ECEEF5;
+    --radius-sm:6px; --radius-md:10px; --radius-lg:14px; --radius-xl:20px;
+  }
+  body { font-family:'Poppins',system-ui,sans-serif; background:var(--off-white); color:var(--ink); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { font-family:'Fraunces','Georgia',serif; color:var(--indigo); font-weight:600; letter-spacing:-.01em; line-height:1.1; }
+  a { color:inherit; text-decoration:none; }
+
+  .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav__row{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:78px;gap:22px}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:23px;color:var(--indigo);display:flex;align-items:center;gap:3px}
+  .logo b{color:var(--cyan-deep)}
+  .nav__links{display:flex;align-items:center;gap:4px;list-style:none}
+  .nav__links > li > a,.nav__item > span{display:inline-flex;align-items:center;gap:5px;padding:10px 13px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--indigo);cursor:pointer}
+  .nav__links > li > a:hover,.nav__item:hover > span{color:var(--cyan-deep);background:rgba(51,204,204,.08)}
+  .nav__item{position:relative}
+  .nav__item > span::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.55}
+  .dropdown{position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(51,51,102,.16);padding:14px;min-width:260px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.18s;z-index:70}
+  .nav__item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+  .dropdown .grp{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:8px 12px 6px;font-weight:600}
+  .dropdown a{display:block;padding:10px 12px;border-radius:9px;color:var(--indigo);font-weight:600;font-size:14.5px}
+  .dropdown a span{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+  .dropdown a:hover{background:var(--off-white)}
+  .nav__cta{display:flex;align-items:center;gap:14px}
+  .nav__burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:9px;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .nav__burger span{width:18px;height:2px;background:var(--indigo)}
+  .btn-nav{background:var(--indigo);color:#fff;font-weight:600;font-size:14px;padding:11px 22px;border-radius:9px}
+  @media(max-width:1040px){.nav__burger{display:flex}
+    .nav__links{position:fixed;inset:78px 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;background:#fff;border-bottom:1px solid var(--line);padding:16px 22px 26px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.2s}
+    .nav__links.open{transform:translateY(0);opacity:1;visibility:visible}
+    .nav__links>li>a,.nav__item>span{padding:14px 12px;font-size:16px}
+    .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:2px solid var(--line);border-radius:0;margin:0 0 8px 14px;padding:4px 0 4px 10px;min-width:0}}
+
+  .hero{background:var(--indigo);padding:30px 40px 56px;text-align:center}
+  .crumb{max-width:860px;margin:0 auto 22px;font-size:12.5px;color:rgba(255,255,255,.55);text-align:left}
+  .crumb a:hover{color:var(--cyan)} .crumb span{margin:0 8px;opacity:.5}
+  .hero-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);background:rgba(51,204,204,.12);border:1px solid rgba(51,204,204,.25);border-radius:100px;padding:5px 14px;margin-bottom:18px}
+  .hero h1{font-size:clamp(30px,4.5vw,48px);line-height:1.12;color:var(--white);margin-bottom:14px;max-width:620px;margin-left:auto;margin-right:auto}
+  .hero h1 em{font-style:italic;color:var(--cyan)}
+  .hero p{font-size:15.5px;color:rgba(255,255,255,.6);max-width:500px;margin:0 auto;line-height:1.65;font-weight:300}
+
+  .progress-wrap{background:var(--indigo);padding:0 40px 28px}
+  .progress-track{display:flex;gap:6px;max-width:860px;margin:0 auto}
+  .progress-step{height:3px;flex:1;border-radius:2px;background:rgba(255,255,255,.12);transition:background .4s}
+  .progress-step.done{background:rgba(51,204,204,.45)}
+  .progress-step.active{background:var(--cyan)}
+
+  .main{max-width:860px;margin:0 auto;padding:36px 24px 72px}
+  .section-label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:20px}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--line)}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 24px;margin-bottom:12px}
+  .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  @media(max-width:580px){.input-grid{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:7px}
+  .field label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+  .input-wrap{position:relative}
+  .prefix{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:15px;color:var(--muted);pointer-events:none}
+  input[type="number"],input[type="email"]{width:100%;background:var(--off-white);border:1px solid var(--line);border-radius:var(--radius-md);padding:12px 14px;font-family:'Poppins',sans-serif;font-size:15px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none}
+  input[type="number"].has-prefix{padding-left:27px}
+  input[type="number"]:focus,input[type="email"]:focus{border-color:var(--cyan-deep);box-shadow:0 0 0 3px rgba(51,204,204,.15);background:var(--white)}
+  input::placeholder{color:var(--muted);opacity:.6}
+  .slider-group{display:flex;flex-direction:column;gap:9px}
+  .slider-header{display:flex;justify-content:space-between;align-items:center}
+  .slider-header label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+  .slider-val{font-size:18px;font-weight:600;color:var(--indigo);font-family:'Fraunces',serif}
+  input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--line);border-radius:2px;outline:none;cursor:pointer}
+  input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--indigo);border:2px solid var(--white);box-shadow:0 0 0 1px var(--line-strong);cursor:pointer;transition:box-shadow .2s}
+  input[type="range"]::-webkit-slider-thumb:hover{box-shadow:0 0 0 4px rgba(51,204,204,.2)}
+  .slider-ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:-4px}
+  .role-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .role-pill{padding:7px 15px;border:1px solid var(--line);border-radius:100px;font-size:13px;color:var(--body);cursor:pointer;background:var(--off-white);transition:all .15s;user-select:none}
+  .role-pill:hover{border-color:var(--cyan-deep);color:var(--ink)}
+  .role-pill.selected{background:var(--cyan-dim);border-color:var(--cyan-deep);color:var(--indigo);font-weight:600}
+  .divider{height:1px;background:var(--line);margin:32px 0}
+
+  .results{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+  .results.visible{opacity:1;transform:translateY(0);pointer-events:all}
+  .results-header{margin-bottom:24px}
+  .results-header h2{font-size:clamp(22px,3.5vw,32px);line-height:1.2;margin-bottom:6px}
+  .results-header h2 span{color:var(--cyan-deep)}
+  .results-header p{font-size:13px;color:var(--muted);font-weight:300}
+  .metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:10px}
+  @media(max-width:580px){.metrics-grid{grid-template-columns:1fr 1fr}}
+  .metric-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px 18px}
+  .metric-card.card-alt{background:var(--off-white)}
+  .metric-label{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .metric-val{font-family:'Fraunces','Georgia',serif;font-size:clamp(24px,3.5vw,32px);color:var(--ink);line-height:1;margin-bottom:4px}
+  .metric-val.cyan{color:var(--cyan-deep)} .metric-val.green{color:var(--mint-deep)} .metric-val.red{color:var(--slate)}
+  .metric-sub{font-size:11px;color:var(--muted);font-weight:300;line-height:1.4}
+
+  .compare-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:20px}
+  .compare-table thead tr{background:var(--surface)}
+  .compare-table th{padding:13px 18px;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-align:left}
+  .compare-table th:nth-child(2){color:var(--slate)}
+  .compare-table th:nth-child(3){color:var(--mint-deep)}
+  .compare-table td{padding:13px 18px;font-size:14px;border-top:1px solid var(--line);color:var(--ink);vertical-align:middle;background:var(--white)}
+  .compare-table tr:nth-child(even) td{background:var(--off-white)}
+  .compare-table td:first-child{color:var(--body);font-size:13px}
+  .compare-table td:nth-child(2){color:var(--slate);font-weight:500}
+  .compare-table td:nth-child(3){color:var(--mint-deep);font-weight:600}
+
+  .proof-bar{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:var(--radius-md);padding:16px 20px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start}
+  .proof-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+  .proof-quote{font-size:13px;color:var(--body);line-height:1.6;font-weight:300}
+  .proof-quote strong{color:var(--indigo);font-weight:600}
+  .proof-source{margin-top:6px;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .insight-box{background:var(--cyan-dim);border:1px solid rgba(51,204,204,.3);border-radius:var(--radius-lg);padding:20px 22px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start}
+  .insight-icon{width:34px;height:34px;flex-shrink:0;background:rgba(51,204,204,.2);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:17px;margin-top:1px}
+  .insight-text{font-size:14px;color:var(--ink);line-height:1.65;font-weight:300}
+  .insight-text strong{font-weight:600;color:var(--indigo)}
+
+  .cta-block{background:var(--indigo);border-radius:var(--radius-xl);padding:34px 32px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin-bottom:16px}
+  .cta-copy h3{font-size:24px;color:var(--white);margin-bottom:8px}
+  .cta-copy p{font-size:13.5px;color:rgba(255,255,255,.55);font-weight:300;max-width:400px;line-height:1.65}
+  .cta-actions{display:flex;flex-direction:column;gap:12px;min-width:280px}
+  .btn-cta{background:var(--white);color:var(--indigo);font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;border:none;border-radius:var(--radius-md);padding:14px 26px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s;white-space:nowrap}
+  .btn-cta:hover{transform:translateY(-2px)}
+  .email-capture{display:flex;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-md);padding:6px}
+  .email-capture input{background:transparent;border:none;color:#fff;flex:1;font-size:13.5px;padding:8px 10px}
+  .email-capture input::placeholder{color:rgba(255,255,255,.5)}
+  .email-capture input:focus{box-shadow:none;background:transparent}
+  .email-capture button{background:var(--cyan);color:var(--indigo);border:none;border-radius:8px;font-family:'Poppins';font-weight:600;font-size:13px;padding:8px 14px;cursor:pointer;white-space:nowrap}
+  .cta-fine{font-size:12px;color:rgba(255,255,255,.45);text-align:center}
+  @media(max-width:680px){.cta-block{grid-template-columns:1fr}.cta-actions{min-width:0}}
+
+  .disclaimer{font-size:11px;color:var(--muted);line-height:1.65;text-align:center;margin-bottom:12px}
+  @keyframes flashUpdate{0%{background:rgba(51,204,204,.18)}100%{background:var(--white)}}
+  .flash{animation:flashUpdate .6s ease forwards}
+  .flash.card-alt{animation:flashUpdate .6s ease forwards;background:var(--off-white)}
+
+  footer{background:var(--indigo);color:rgba(255,255,255,.66);padding:54px 0 30px}
+  .foot__top{max-width:1180px;margin:0 auto;padding:0 32px 36px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .foot__brand .logo{color:#fff;margin-bottom:14px}.foot__brand .logo b{color:var(--cyan)}
+  .foot__brand p{font-size:14px;max-width:300px}
+  .foot__top h4{color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;font-weight:600}
+  .foot__top a{display:block;font-size:14px;padding:5px 0;color:rgba(255,255,255,.68)}
+  .foot__top a:hover{color:var(--cyan)}
+  .foot__bottom{max-width:1180px;margin:0 auto;padding:22px 32px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.45)}
+  @media(max-width:760px){.foot__top{grid-template-columns:1fr 1fr}}
+  .mock-banner{background:var(--mint);color:#053d29;text-align:center;font-size:12.5px;padding:8px;letter-spacing:.3px;font-weight:600}
+  .mock-banner a{color:#053d29;text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="mock-banner">MOCKUP &mdash; Global Talent Solutions lead magnet &middot; <a href="index.html">&larr; Home</a> &middot; your calculator, reskinned on-brand &middot; not live</div>
+
+<header class="nav">
+  <div class="nav__row">
+    <a class="logo" href="index.html">Sellers Hub<b>.</b></a>
+    <ul class="nav__links" id="navlinks">
+      <li class="nav__item"><span>Find Talent</span>
+        <div class="dropdown">
+          <div class="grp">By industry</div>
+          <a href="index.html#serve">Manufacturing</a>
+          <a href="index.html#serve">Commercial Insurance</a>
+          <a href="index.html#serve">B2B Tech &amp; SaaS</a>
+          <div class="grp">By model</div>
+          <a href="index.html#models">U.S. Retained Search</a>
+        </div>
+      </li>
+      <li><a href="index.html#models" style="color:var(--cyan-deep)">Global Talent Solutions</a></li>
+      <li><a href="success-stories.html">Success Stories</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
+      <li><a href="for-job-seekers.html">Find a Job</a></li><li class="nav__item"><span>Hiring Hub</span>
+        <div class="dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="how-to-vet-a-global-talent-recruiting-partner.html">Guides</a>
+          <a href="faqs.html">FAQs</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://calendly.com/virginia-bowers/initial-meeting" target="_blank" rel="noopener" class="btn-nav">Book a call</a>
+      <button class="nav__burger" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="crumb"><a href="index.html">Home</a><span>/</span><a href="index.html#models">Global Talent Solutions</a><span>/</span>ROI Calculator</div>
+  <div class="hero-label">Free Tool</div>
+  <h1>See what a global sales hire <em>actually</em> saves you</h1>
+  <p>Enter your current hiring numbers. We'll show you the real cost comparison and what that difference could do for your runway.</p>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-track">
+    <div class="progress-step active" id="step1"></div>
+    <div class="progress-step" id="step2"></div>
+    <div class="progress-step" id="step3"></div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Configure your comparison</div>
+  <div class="card">
+    <div class="field" style="margin-bottom:20px">
+      <label style="margin-bottom:10px;display:block">Which role are you hiring for?</label>
+      <div class="role-grid" id="roleGrid">
+        <div class="role-pill selected" onclick="toggleRole(this)">SDR / BDR</div>
+        <div class="role-pill" onclick="toggleRole(this)">Account Executive</div>
+        <div class="role-pill" onclick="toggleRole(this)">Account Manager</div>
+        <div class="role-pill" onclick="toggleRole(this)">Revenue Operations</div>
+        <div class="role-pill" onclick="toggleRole(this)">GTM Engineer</div>
+        <div class="role-pill" onclick="toggleRole(this)">Customer Success</div>
+        <div class="role-pill" onclick="toggleRole(this)">Sales Support / EA</div>
+      </div>
+    </div>
+    <div class="input-grid" style="margin-bottom:20px">
+      <div class="field">
+        <label>US annual salary <span style="font-weight:300;text-transform:none;letter-spacing:0;opacity:.6">(pre-filled, editable)</span></label>
+        <div class="input-wrap"><span class="prefix">$</span>
+          <input type="number" id="usSalary" class="has-prefix" value="60000" min="30000" max="250000" placeholder="60000" oninput="calc()"/>
+        </div>
+      </div>
+      <div class="field">
+        <label>Weeks to fill (US avg)</label>
+        <div class="input-wrap"><input type="number" id="ttfUs" value="10" min="1" max="52" placeholder="10" oninput="calc()"/></div>
+      </div>
+    </div>
+    <div class="slider-group">
+      <div class="slider-header"><label>How many roles?</label><div class="slider-val" id="rolesVal">2 roles</div></div>
+      <input type="range" id="rolesSlider" min="1" max="10" value="2" oninput="updateSlider()"/>
+      <div class="slider-ticks"><span>1</span><span>3</span><span>5</span><span>7</span><span>10</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="results" id="results">
+    <div class="results-header">
+      <h2>Your estimated savings with <span>Global Talent</span></h2>
+      <p>Based on your inputs. Global figures shown as ranges &mdash; actual cost depends on role, seniority, and location.</p>
+    </div>
+
+    <div class="metrics-grid" style="margin-bottom:10px">
+      <div class="metric-card">
+        <div class="metric-label" style="color:var(--slate)">US Hire</div>
+        <div class="metric-val red" id="usTotalCost">$0</div>
+        <div class="metric-sub" id="usPerRole">annual salary</div>
+      </div>
+      <div class="metric-card" style="background:var(--cyan-dim);border-color:rgba(51,204,204,.35)">
+        <div class="metric-label" style="color:var(--cyan-deep)">Global Hire</div>
+        <div class="metric-val" style="color:var(--cyan-deep)" id="globalTotalCost">$0</div>
+        <div class="metric-sub" style="color:var(--cyan-deep);opacity:.7">annual salary range</div>
+      </div>
+    </div>
+    <div class="metrics-grid" style="margin-bottom:20px">
+      <div class="metric-card card-alt">
+        <div class="metric-label">Global time-to-fill</div>
+        <div class="metric-val" id="weeksSaved">-- wks</div>
+        <div class="metric-sub">avg with Sellers Hub</div>
+      </div>
+      <div class="metric-card card-alt">
+        <div class="metric-label">Salary cost reduction</div>
+        <div class="metric-val green" id="costReduction">--%</div>
+        <div class="metric-sub">salary-to-salary comparison</div>
+      </div>
+    </div>
+
+    <div class="section-label">Side-by-side breakdown</div>
+    <table class="compare-table">
+      <thead><tr><th></th><th>US hire</th><th>Global via Sellers Hub</th></tr></thead>
+      <tbody>
+        <tr><td>Annual salary</td><td id="tbl-usSalary">--</td><td id="tbl-globalSalary">--</td></tr>
+        <tr><td>Time-to-fill</td><td id="tbl-usTtf">--</td><td id="tbl-globalTtf">~5 weeks</td></tr>
+        <tr><td>Replacement guarantee</td><td>Varies</td><td>Full replacement</td></tr>
+        <tr><td>Benefits / overhead</td><td>Your decision</td><td>Your decision</td></tr>
+      </tbody>
+    </table>
+
+    <div class="proof-bar">
+      <div class="proof-icon">&#128200;</div>
+      <div class="proof-quote">
+        <strong>Over 80% of the sales professionals we place hit at least 90% of their first-year budget</strong> &mdash; onshore or offshore. We vet for performance against the role, not just for cost.
+        <div class="proof-source">Sellers Hub placement data</div>
+      </div>
+    </div>
+
+    <div class="insight-box" id="insightBox">
+      <div class="insight-icon">&#128161;</div>
+      <div class="insight-text" id="insightText">Calculating your personalized insight...</div>
+    </div>
+
+    <div class="cta-block">
+      <div class="cta-copy">
+        <h3>Ready to put these numbers to work?</h3>
+        <p>Book a 20-minute discovery call with Virginia Bowers, our founder, to scope the roles and turn this estimate into a real search.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://calendly.com/virginia-bowers/initial-meeting" target="_blank" rel="noopener" class="btn-cta">Book a discovery call &rarr;</a>
+        <form class="email-capture" onsubmit="return false">
+          <input type="email" placeholder="you@company.com" aria-label="Work email"/>
+          <button type="submit">Email me this</button>
+        </form>
+        <div class="cta-fine">No obligation. We only take on searches we can win.</div>
+      </div>
+    </div>
+
+    <p class="disclaimer">Estimate based on typical ranges. Actual cost depends on role, seniority, location, and engagement model. Figures are salary-to-salary and exclude benefits and overhead, which you decide either way.</p>
+  </div><!-- /results -->
+</div><!-- /main -->
+
+<footer>
+  <div class="foot__top">
+    <div class="foot__brand">
+      <a class="logo" href="index.html">Sellers Hub<b>.</b></a>
+      <p>Sales Talent That Moves the Needle, Onshore or Offshore. A sales-only recruitment firm for B2B companies.</p>
+    </div>
+    <div><h4>What We Do</h4><a href="index.html#models">U.S. Retained Search</a><a href="index.html#models">Global Talent Solutions</a><a href="index.html#serve">Manufacturing</a><a href="index.html#serve">Commercial Insurance</a><a href="index.html#serve">B2B Tech &amp; SaaS</a></div>
+    <div><h4>Company</h4><a href="who-we-are.html">Who We Are</a><a href="success-stories.html">Success Stories</a><a href="index.html#contact">Contact</a><a href="for-job-seekers.html">Find a Job</a></div>
+    <div><h4>Hiring Hub</h4><a href="blog.html">Blog</a><a href="how-to-vet-a-global-talent-recruiting-partner.html">Guides</a><a href="faqs.html">FAQs</a></div>
+  </div>
+  <div class="foot__bottom"><span>&copy; 2026 Sellers Hub &middot; Connecting people for over 10 years</span><span>Sales-only recruitment &middot; Onshore + Offshore</span></div>
+</footer>
+
+<script>
+const US_SALARY_MID = { 'SDR / BDR':60000,'Account Executive':95000,'Account Manager':80000,'Revenue Operations':95000,'GTM Engineer':120000,'Customer Success':92000,'Sales Support / EA':50000 };
+const US_SALARY_DEFAULT = 85000;
+const GLOBAL_LOW = { 'SDR / BDR':18000,'Account Executive':18000,'Account Manager':18000,'Revenue Operations':18000,'GTM Engineer':21600,'Customer Success':18000,'Sales Support / EA':12000 };
+const GLOBAL_HIGH = { 'SDR / BDR':24000,'Account Executive':30000,'Account Manager':26400,'Revenue Operations':26400,'GTM Engineer':33600,'Customer Success':25200,'Sales Support / EA':18000 };
+const GLOBAL_DEFAULT_LOW = 18000, GLOBAL_DEFAULT_HIGH = 26400, GLOBAL_TTF = 4;
+
+function fmt(n){ if(n>=1000000) return '$'+(n/1000000).toFixed(1)+'M'; if(n>=1000) return '$'+Math.round(n/1000)+'K'; return '$'+Math.round(n); }
+function fmtFull(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+function fmtRange(lo,hi){ return fmt(lo)+' – '+fmt(hi); }
+
+function updateSlider(){ const val=document.getElementById('rolesSlider').value; document.getElementById('rolesVal').textContent=val+(val==1?' role':' roles'); calc(); }
+function toggleRole(el){ document.querySelectorAll('.role-pill').forEach(p=>p.classList.remove('selected')); el.classList.add('selected'); const role=el.textContent.trim(); document.getElementById('usSalary').value=US_SALARY_MID[role]||US_SALARY_DEFAULT; calc(); }
+function updateProgress(){ const usSalary=parseFloat(document.getElementById('usSalary').value)||0; const roles=parseInt(document.getElementById('rolesSlider').value); const selectedRoles=document.querySelectorAll('.role-pill.selected').length; let progress=0; if(usSalary>0)progress=1; if(roles>1)progress=2; if(selectedRoles>0&&usSalary>0)progress=3; for(let i=1;i<=3;i++){ const el=document.getElementById('step'+i); el.className='progress-step'; if(i<progress)el.classList.add('done'); if(i===progress)el.classList.add('active'); } }
+function getGlobalRange(){ const selected=Array.from(document.querySelectorAll('.role-pill.selected')).map(el=>el.textContent.trim()); if(selected.length===0)return{low:GLOBAL_DEFAULT_LOW,high:GLOBAL_DEFAULT_HIGH}; const totalLow=selected.reduce((s,r)=>s+(GLOBAL_LOW[r]||GLOBAL_DEFAULT_LOW),0); const totalHigh=selected.reduce((s,r)=>s+(GLOBAL_HIGH[r]||GLOBAL_DEFAULT_HIGH),0); return{low:totalLow/selected.length,high:totalHigh/selected.length}; }
+function animateVal(id,target,formatFn){ const el=document.getElementById(id); const duration=600; const startTime=performance.now(); function step(now){ const elapsed=now-startTime; const progress=Math.min(elapsed/duration,1); const eased=1-Math.pow(1-progress,3); el.textContent=formatFn(Math.round(eased*target)); if(progress<1)requestAnimationFrame(step); } requestAnimationFrame(step); setTimeout(function(){ el.textContent=formatFn(target); },duration+80); }
+
+function calc(){
+  updateProgress();
+  const usSalary=parseFloat(document.getElementById('usSalary').value)||60000;
+  const ttfUs=parseFloat(document.getElementById('ttfUs').value)||10;
+  const roles=parseInt(document.getElementById('rolesSlider').value)||1;
+  const {low:globalBaseLow,high:globalBaseHigh}=getGlobalRange();
+  const savingsLowSingle=usSalary-globalBaseHigh;
+  const savingsHighSingle=usSalary-globalBaseLow;
+  const reductionLow=Math.round((savingsLowSingle/usSalary)*100);
+  const reductionHigh=Math.round((savingsHighSingle/usSalary)*100);
+  const usTotalAll=usSalary*roles;
+  const globalLowAll=globalBaseLow*roles;
+  const globalHighAll=globalBaseHigh*roles;
+  const globalMidAll=(globalLowAll+globalHighAll)/2;
+  const savingsLowAll=savingsLowSingle*roles;
+  const savingsHighAll=savingsHighSingle*roles;
+  document.getElementById('results').classList.add('visible');
+  animateVal('usTotalCost',usTotalAll,fmt);
+  animateVal('globalTotalCost',globalMidAll,fmt);
+  setTimeout(()=>{ document.getElementById('globalTotalCost').textContent=fmtRange(globalLowAll,globalHighAll); ['globalTotalCost','costReduction'].forEach(id=>{ const card=document.getElementById(id).closest('.metric-card'); if(card){card.classList.remove('flash');void card.offsetWidth;card.classList.add('flash');} }); },820);
+  document.getElementById('usPerRole').textContent = roles>1 ? fmtFull(usSalary)+' x '+roles+' hires' : 'base salary';
+  const globalTtf=Math.max(3,Math.round(ttfUs/2));
+  document.getElementById('weeksSaved').textContent='~'+globalTtf+' wks';
+  document.getElementById('costReduction').textContent=reductionLow+'–'+Math.min(reductionHigh,85)+'%';
+  document.getElementById('tbl-usSalary').textContent=fmtFull(usSalary)+(roles>1?' x '+roles:'');
+  document.getElementById('tbl-globalSalary').textContent=fmtRange(globalLowAll,globalHighAll)+'/yr';
+  document.getElementById('tbl-usTtf').textContent=ttfUs+' weeks avg';
+  const globalTtfCell=document.getElementById('tbl-globalTtf');
+  if(globalTtfCell)globalTtfCell.textContent='~'+globalTtf+' weeks';
+  const selectedRoleNames=Array.from(document.querySelectorAll('.role-pill.selected')).map(el=>el.textContent.trim());
+  let insight='';
+  if(savingsHighAll>=200000){ insight=`<strong>You're looking at ${fmtRange(savingsLowAll,savingsHighAll)} in annual salary savings</strong> across these roles. That's runway you can put back into pipeline, product, or more hires.`; }
+  else if(savingsHighAll>=50000){ insight=`<strong>You're on track to save ${fmtRange(savingsLowAll,savingsHighAll)} a year</strong> on salary alone, before you count the faster time-to-fill.`; }
+  else { insight=`<strong>Even on a single hire, the difference is material</strong> — and it compounds every time you add a seat.`; }
+  if(selectedRoleNames.includes('SDR / BDR')){ insight+=` SDR roles are where global talent delivers the clearest ROI: high volume, process-driven, and ideal for a committed search.`; }
+  else if(selectedRoleNames.includes('Revenue Operations')){ insight+=` RevOps is one of the highest-ROI global hires — structured, systems-focused, and immediately productive.`; }
+  else if(selectedRoleNames.includes('GTM Engineer')){ insight+=` GTM Engineers command a premium in the US — global talent pools give you the same skill set at a fraction of the cost.`; }
+  document.getElementById('insightText').innerHTML=insight;
+}
+window.addEventListener('load',()=>{ setTimeout(calc,300); });
+</script>
+</body>
+</html>
