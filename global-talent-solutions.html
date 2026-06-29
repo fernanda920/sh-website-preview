@@ -208,6 +208,17 @@
   .photoband .eyebrow{color:var(--cyan)}.photoband .eyebrow::before{background:var(--cyan)}
   .photoband h2{color:#fff;font-size:clamp(26px,3.2vw,40px);max-width:24ch;margin-top:10px;text-shadow:0 2px 16px rgba(14,14,38,.45)}
   .photoband p{color:rgba(255,255,255,.9);max-width:48ch;margin-top:10px;font-weight:300;font-size:16px}
+
+  /* ===== scroll reveal (fail-safe: visible if JS off) ===== */
+  html.reveal-on [data-rv]{opacity:0;transform:translateY(22px);will-change:opacity,transform}
+  html.reveal-on [data-rv].rv-in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  @media(prefers-reduced-motion:reduce){html.reveal-on [data-rv]{opacity:1 !important;transform:none !important}}
+
+  /* ===== gentle load-in motion (CSS-only, always ends fully visible) ===== */
+  @keyframes shRise{from{transform:translateY(16px)}to{transform:none}}
+  @media (prefers-reduced-motion: no-preference){
+    .lead,.ind,.why,.sl,.case,.pcard,.kpi,.model,.metric,.stats,.teamsplit,.funnelline,.seller__rail,.proof__row,.cs,.testi,.story,.magnet,.split,.photoband .wrap,.culture .wrap{animation:shRise .6s ease both}
+  }
 </style>
 </head>
 <body>
@@ -220,11 +231,11 @@
       <li class="nav__item"><span>Find Talent</span>
         <div class="dropdown">
           <div class="grp">By industry</div>
-          <a href="index.html#serve">Manufacturing</a>
-          <a href="index.html#serve">Commercial Insurance</a>
-          <a href="index.html#serve">B2B Tech &amp; SaaS</a>
+          <a href="manufacturing.html">Manufacturing</a>
+          <a href="commercial-insurance.html">Commercial Insurance</a>
+          <a href="b2b-tech-saas.html">B2B Tech &amp; SaaS</a>
           <div class="grp">By model</div>
-          <a href="index.html#models">U.S. Retained Search</a>
+          <a href="us-sales-recruitment.html">U.S. Retained Search</a>
         </div>
       </li>
       <li><a href="global-talent-solutions.html" style="color:var(--cyan-deep)">Global Talent Solutions</a></li>
@@ -416,7 +427,7 @@
       <a class="logo" href="index.html">Sellers Hub<b>.</b></a>
       <p>Sales Talent That Moves the Needle, Onshore or Offshore. A sales-only recruitment firm for B2B companies.</p>
     </div>
-    <div><h4>What We Do</h4><a href="index.html#models">U.S. Retained Search</a><a href="global-talent-solutions.html">Global Talent Solutions</a><a href="index.html#serve">Manufacturing</a><a href="index.html#serve">Commercial Insurance</a><a href="index.html#serve">B2B Tech &amp; SaaS</a></div>
+    <div><h4>What We Do</h4><a href="us-sales-recruitment.html">U.S. Retained Search</a><a href="global-talent-solutions.html">Global Talent Solutions</a><a href="manufacturing.html">Manufacturing</a><a href="commercial-insurance.html">Commercial Insurance</a><a href="b2b-tech-saas.html">B2B Tech &amp; SaaS</a></div>
     <div><h4>Company</h4><a href="who-we-are.html">Who We Are</a><a href="success-stories.html">Success Stories</a><a href="index.html#contact">Contact</a><a href="for-job-seekers.html">Find a Job</a></div>
     <div><h4>Hiring Hub</h4><a href="blog.html">Blog</a><a href="how-to-vet-a-global-talent-recruiting-partner.html">Guides</a><a href="global-talent-roi-calculator.html">ROI Calculator</a></div>
   </div>
