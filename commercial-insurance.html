@@ -200,6 +200,14 @@
   .why,.pcard,.model,.sl{transition:transform .2s ease,box-shadow .2s ease}
   .why:hover,.pcard:hover,.model:hover,.sl:hover{transform:translateY(-5px);box-shadow:0 32px 58px -22px rgba(30,30,64,.44)}
   .lead h2{font-size:clamp(34px,4.6vw,56px)}
+
+  /* ===== photo band ===== */
+  .photoband{position:relative;padding:0;min-height:380px;display:flex;align-items:flex-end;color:#fff;background-size:cover;background-position:center 30%;background-repeat:no-repeat}
+  .photoband::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,22,50,.85),rgba(22,22,50,.04) 60%,rgba(22,22,50,.34));z-index:0}
+  .photoband .wrap{position:relative;z-index:1;padding:46px 32px}
+  .photoband .eyebrow{color:var(--cyan)}.photoband .eyebrow::before{background:var(--cyan)}
+  .photoband h2{color:#fff;font-size:clamp(26px,3.2vw,40px);max-width:24ch;margin-top:10px;text-shadow:0 2px 16px rgba(14,14,38,.45)}
+  .photoband p{color:rgba(255,255,255,.9);max-width:48ch;margin-top:10px;font-weight:300;font-size:16px}
 </style>
 </head>
 <body>
@@ -361,6 +369,7 @@
 </section>
 
 <!-- FINAL CTA -->
+<section class="photoband" style="background-image:url('img/photos/sh-10.jpg')"><div class="wrap"><span class="eyebrow">Inside Sellers Hub</span><h2>We know what separates a producer who builds a book from one who inherits it.</h2></div></section>
 <section class="final">
   <div class="wrap">
     <span class="eyebrow">Start hiring</span>
