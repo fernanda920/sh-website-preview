@@ -202,6 +202,14 @@
   @media(max-width:760px){.foot__top{grid-template-columns:1fr 1fr}}
   .mock-banner{background:var(--mint);color:#053d29;text-align:center;font-size:12.5px;padding:8px;letter-spacing:.3px;font-weight:600}
   .mock-banner a{color:#053d29;text-decoration:underline}
+
+  /* ===== DEPTH ROLLOUT v2 - less flat, more premium ===== */
+  body{background:#FBFBFE;background-image:radial-gradient(rgba(51,51,102,.04) 1px,transparent 1px);background-size:24px 24px}
+  .tint{background:linear-gradient(180deg,#F1F3FB 0%,#E7EBF6 100%)}
+  .why,.case,.pcard,.model,.metric,.kpi,.cs,.calc-card,.lchip,.sl{box-shadow:0 22px 46px -22px rgba(30,30,64,.34)}
+  .why,.pcard,.model,.sl{transition:transform .2s ease,box-shadow .2s ease}
+  .why:hover,.pcard:hover,.model:hover,.sl:hover{transform:translateY(-5px);box-shadow:0 32px 58px -22px rgba(30,30,64,.44)}
+  .lead h2{font-size:clamp(34px,4.6vw,56px)}
 </style>
 </head>
 <body>
