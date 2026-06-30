@@ -232,6 +232,12 @@
   @media (prefers-reduced-motion: no-preference){
     .lead,.ind,.why,.sl,.case,.pcard,.kpi,.model,.metric,.stats,.teamsplit,.funnelline,.seller__rail,.proof__row,.cs,.testi,.story,.magnet,.split,.photoband .wrap,.culture .wrap{animation:shRise .6s ease both}
   }
+
+  /* ===== photo-backed hero (stock, gradient overlay keeps text readable) ===== */
+  .hero{position:relative;background:var(--indigo)}
+  .hero.has-photo{background-image:linear-gradient(108deg,rgba(26,26,58,.95) 0%,rgba(30,30,64,.88) 40%,rgba(34,34,72,.58) 100%),var(--hero-img);background-size:cover;background-position:center;background-repeat:no-repeat}
+  .hero.has-photo .hero__grid{padding-top:54px;padding-bottom:70px}
+  @media(max-width:900px){.hero.has-photo{background-image:linear-gradient(180deg,rgba(26,26,58,.94),rgba(30,30,64,.93)),var(--hero-img)}}
 </style>
 </head>
 <body>
@@ -270,7 +276,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero has-photo" style="--hero-img:url('img/stock/sales.jpg')">
   <div class="wrap">
     <div class="crumb"><a href="index.html">Home</a><span>/</span>U.S. Sales Recruitment</div>
     <div class="hero__grid">
