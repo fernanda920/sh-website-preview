@@ -224,10 +224,14 @@
   html.reveal-on [data-rv].rv-in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   @media(prefers-reduced-motion:reduce){html.reveal-on [data-rv]{opacity:1 !important;transform:none !important}}
 
-  /* ===== gentle load-in motion (CSS-only, always ends fully visible) ===== */
+  /* ===== motion: load-in + scroll-reveal (transform-only, never hides content) ===== */
   @keyframes shRise{from{transform:translateY(16px)}to{transform:none}}
+  @keyframes shScroll{from{transform:translateY(42px)}to{transform:none}}
   @media (prefers-reduced-motion: no-preference){
-    .lead,.ind,.why,.sl,.case,.pcard,.kpi,.model,.metric,.stats,.teamsplit,.funnelline,.seller__rail,.proof__row,.cs,.testi,.story,.magnet,.split,.photoband .wrap,.culture .wrap{animation:shRise .6s ease both}
+    .lead,.ind,.why,.step,.sl,.stats,.teamsplit,.funnelline,.proof__row,.cs,.pcard,.kpi,.model,.metric,.testi,.story,.magnet,.split,.qcard,.pain,.pullquote,.feature__img,.feature .ftxt,.photoband .wrap,.culture .wrap{animation:shRise .6s ease both}
+    @supports (animation-timeline: view()){
+      .lead,.ind,.why,.step,.sl,.stats,.teamsplit,.funnelline,.proof__row,.cs,.pcard,.kpi,.model,.metric,.testi,.story,.magnet,.split,.qcard,.pain,.pullquote,.feature__img,.feature .ftxt,.photoband .wrap,.culture .wrap{animation:shScroll linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+    }
   }
 
   /* ===== photo-backed hero (stock, gradient overlay keeps text readable) ===== */
@@ -248,6 +252,20 @@
   .pullquote .src{margin-top:18px;font-size:14px;color:rgba(255,255,255,.82);border-left:3px solid var(--cyan);padding-left:14px}
   .pullquote .src b{color:#fff;display:block;font-family:'Poppins';font-weight:600}
   @media(max-width:680px){.pains{grid-template-columns:1fr}.pullquote{padding:28px 26px}}
+
+  /* ===== mid-page feature (image + text, alternating) ===== */
+  .feature{padding:86px 0;background:#fff}
+  .feature.tintbg{background:linear-gradient(180deg,#F1F3FB 0%,#E7EBF6 100%)}
+  .feature__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .feature__img{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 38px 74px -30px rgba(22,22,50,.55)}
+  .feature__img img{width:100%;height:100%;object-fit:cover}
+  .feature .ftxt h2{font-size:clamp(28px,3.4vw,42px);line-height:1.04;margin:12px 0 14px}
+  .feature .ftxt p{font-size:16.5px;margin-bottom:16px}
+  .feature .chk{list-style:none;margin-top:4px}
+  .feature .chk li{position:relative;padding:8px 0 8px 30px;font-size:15px;color:var(--body)}
+  .feature .chk li::before{content:"";position:absolute;left:2px;top:14px;width:13px;height:8px;border-left:2.5px solid var(--mint);border-bottom:2.5px solid var(--mint);transform:rotate(-45deg)}
+  .feature.rev .feature__img{order:2}
+  @media(max-width:820px){.feature__grid{grid-template-columns:1fr;gap:28px}.feature.rev .feature__img,.feature__img{order:-1}}
 </style>
 </head>
 <body>
@@ -380,6 +398,21 @@
       <div class="step"><div class="num">Identify and engage top talent</div><h3>Headhunt the market</h3><p>We proactively source experienced SaaS and B2B tech sales professionals, including passive candidates not actively applying.</p></div>
       <div class="step"><div class="num">Evaluate sales and industry experience</div><h3>Vet on SELLER</h3><p>Candidates are assessed on sales performance, communication ability, technical aptitude, and alignment with your business goals.</p></div>
       <div class="step"><div class="num">Support the hiring process</div><h3>Manage to offer</h3><p>We manage the process from candidate introductions through offer acceptance, with transparent communication throughout.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- MID-PAGE FEATURE -->
+<section class="feature">
+  <div class="wrap feature__grid">
+    <div class="feature__img"><img loading="lazy" decoding="async" src="img/stock/tech-2.jpg" alt="B2B SaaS go-to-market team at work"></div>
+    <div class="ftxt">
+      <span class="eyebrow">GTM talent that carries a number</span>
+      <h2>We find the rep who carried the number, not the one who rode the team.</h2>
+      <p>In SaaS, interview polish hides who actually closed. We score every candidate on real, verified sales performance, so the AE you hire is closing inside the first quarter.</p>
+      <ul class="chk"><li>Verified quota attainment, not self-reported</li><li>Full-cycle or specialized, matched to your motion</li><li>Ramps fast and stays past the first year</li></ul>
     </div>
   </div>
 </section>

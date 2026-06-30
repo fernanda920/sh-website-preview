@@ -212,10 +212,14 @@
   html.reveal-on [data-rv].rv-in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   @media(prefers-reduced-motion:reduce){html.reveal-on [data-rv]{opacity:1 !important;transform:none !important}}
 
-  /* ===== gentle load-in motion (CSS-only, always ends fully visible) ===== */
+  /* ===== motion: load-in + scroll-reveal (transform-only, never hides content) ===== */
   @keyframes shRise{from{transform:translateY(16px)}to{transform:none}}
+  @keyframes shScroll{from{transform:translateY(42px)}to{transform:none}}
   @media (prefers-reduced-motion: no-preference){
-    .lead,.ind,.why,.sl,.case,.pcard,.kpi,.model,.metric,.stats,.teamsplit,.funnelline,.seller__rail,.proof__row,.cs,.testi,.story,.magnet,.split,.photoband .wrap,.culture .wrap{animation:shRise .6s ease both}
+    .lead,.ind,.why,.step,.sl,.stats,.teamsplit,.funnelline,.proof__row,.cs,.pcard,.kpi,.model,.metric,.testi,.story,.magnet,.split,.qcard,.pain,.pullquote,.feature__img,.feature .ftxt,.photoband .wrap,.culture .wrap{animation:shRise .6s ease both}
+    @supports (animation-timeline: view()){
+      .lead,.ind,.why,.step,.sl,.stats,.teamsplit,.funnelline,.proof__row,.cs,.pcard,.kpi,.model,.metric,.testi,.story,.magnet,.split,.qcard,.pain,.pullquote,.feature__img,.feature .ftxt,.photoband .wrap,.culture .wrap{animation:shScroll linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+    }
   }
 </style>
 </head>
