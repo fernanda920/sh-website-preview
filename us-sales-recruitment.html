@@ -238,6 +238,19 @@
   .hero.has-photo{background-image:linear-gradient(108deg,rgba(26,26,58,.95) 0%,rgba(30,30,64,.88) 40%,rgba(34,34,72,.58) 100%),var(--hero-img);background-size:cover;background-position:center;background-repeat:no-repeat}
   .hero.has-photo .hero__grid{padding-top:54px;padding-bottom:70px}
   @media(max-width:900px){.hero.has-photo{background-image:linear-gradient(180deg,rgba(26,26,58,.94),rgba(30,30,64,.93)),var(--hero-img)}}
+
+  /* ===== pain-first section (lead with the buyer's problem) ===== */
+  .painsec{background:linear-gradient(180deg,#F1F3FB 0%,#E7EBF6 100%)}
+  .pains{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:4px}
+  .pain{background:#fff;border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:13px;padding:22px 24px;box-shadow:0 16px 34px -22px rgba(51,51,102,.4)}
+  .pain p{font-family:'Fraunces','Georgia',serif;font-weight:500;font-size:17px;color:var(--indigo);line-height:1.34}
+  .bridge{margin-top:30px;font-size:18px;color:var(--body);max-width:62ch;line-height:1.6}
+  .bridge b{color:var(--ink);font-weight:600}
+  .pullquote{margin-top:34px;background:var(--indigo);border-radius:18px;padding:34px 38px;color:#fff;box-shadow:0 30px 58px -26px rgba(26,26,58,.6);max-width:none}
+  .pullquote blockquote{font-family:'Fraunces','Georgia',serif;font-weight:500;font-size:clamp(20px,2.3vw,27px);line-height:1.32;color:#fff}
+  .pullquote .src{margin-top:18px;font-size:14px;color:rgba(255,255,255,.82);border-left:3px solid var(--cyan);padding-left:14px}
+  .pullquote .src b{color:#fff;display:block;font-family:'Poppins';font-weight:600}
+  @media(max-width:680px){.pains{grid-template-columns:1fr}.pullquote{padding:28px 26px}}
 </style>
 </head>
 <body>
@@ -301,6 +314,22 @@
     </div>
   </div>
 </section>
+
+<!-- PAIN-FIRST -->
+<section class="painsec">
+  <div class="wrap">
+    <div class="lead"><span class="eyebrow">The retained-search problem</span><h2>If this sounds like your search.</h2></div>
+    <div class="pains">
+      <div class="pain"><p>&ldquo;We've had a revenue-critical seat open for months with no one who can close.&rdquo;</p></div>
+      <div class="pain"><p>&ldquo;Contingent recruiters flooded us with resumes and none of them fit.&rdquo;</p></div>
+      <div class="pain"><p>&ldquo;We can't afford a mis-hire in a role this important.&rdquo;</p></div>
+      <div class="pain"><p>&ldquo;The leaders we actually want aren't on the open market.&rdquo;</p></div>
+    </div>
+    <p class="bridge">A revenue seat left open, or filled wrong, is the most expensive hire you will make. <b>We run a committed, retained search</b>, map the whole market, and bring you SELLER-scored finalists, not a resume stack.</p>
+    <div class="pullquote"><blockquote>&ldquo;We can't express enough how thrilled we are with Sellers Hub. They helped us find our Chief Revenue Officer, and from start to finish their expertise, professionalism, and dedication were truly impressive.&rdquo;</blockquote><div class="src"><b>HR R.</b>Hiring company &middot; via Yelp</div></div>
+  </div>
+</section>
+
 
 <!-- INTRO + ROLES -->
 <section>
