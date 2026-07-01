@@ -1,0 +1,109 @@
+/* ============================================================
+   Design C skin — minimalist override for inner pages
+   Loaded AFTER each page's inline <style> so it wins.
+   Turns the indigo/serif/photo-heavy pages into Manrope minimal.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+  --indigo:#1b1b30; --indigo-lift:#2b2b48; --indigo-deep:#1b1b30;
+  --cyan:#33CCCC; --cyan-deep:#12938f; --cyan-dim:#EAF7F7;
+  --mint:#12938f; --mint-deep:#12938f; --mint-bg:#F1F8F7;
+  --ink:#1b1b30; --body:#57576a; --muted:#9a9aac;
+  --line:#E9E9F1; --line-2:#DEDEE8; --bg-tint:#F5F6F9; --teal:#12938f;
+}
+
+/* ---- typography ---- */
+body{font-family:'Manrope',system-ui,sans-serif !important;background:#fff !important;background-image:none !important;color:var(--body);letter-spacing:-.005em}
+h1,h2,h3{font-family:'Manrope',sans-serif !important;font-weight:500 !important;letter-spacing:-.03em !important;color:var(--ink)}
+/* force Manrope on every display/number element that was Fraunces */
+blockquote,cite,.n,.ltr,.fn,.sn,.num,.price,.big,.savings .big,.calc-mini .n,.proof .n,.stat .n,.metric .n,.kpi .n,.badge .n,.cs .n,.person__n,.step .sn,.step .num,details summary,.testi blockquote,.founder blockquote,.pullquote blockquote,.bignum{font-family:'Manrope',sans-serif !important;letter-spacing:-.02em !important}
+.hero h1 em{font-style:normal !important}
+.eyebrow{color:var(--cyan-deep) !important;letter-spacing:.16em !important;font-weight:600 !important}
+.eyebrow::before{background:var(--cyan) !important}
+
+/* ---- strip the depth pass: shadows, dot-grid, hover lifts ---- */
+.why,.case,.pcard,.model,.metric,.kpi,.cs,.calc-card,.lchip,.sl,.stats,.testi,.formcard,.ind,.qcard,.pain,.step,.pullquote,.magnet{box-shadow:none !important}
+.why:hover,.pcard:hover,.model:hover,.sl:hover,.ind:hover{transform:none !important;box-shadow:none !important}
+.tint{background:var(--bg-tint) !important;background-image:none !important}
+
+/* ---- buttons -> C ---- */
+.btn{border-radius:7px !important;font-family:'Manrope' !important;font-weight:600 !important}
+.btn--primary,.btn--white{background:var(--ink) !important;color:#fff !important;border-color:var(--ink) !important}
+.btn--out,.btn--ghost{background:transparent !important;border:1px solid var(--line-2) !important;color:var(--ink) !important}
+.btn--out:hover,.btn--ghost:hover{background:transparent !important;border-color:var(--ink) !important;color:var(--ink) !important}
+.btn--out-light,.btn--ghost-light{background:transparent !important;border:1px solid var(--line-2) !important;color:var(--ink) !important}
+.btn--out-light:hover,.btn--ghost-light:hover{background:var(--bg-tint) !important;color:var(--ink) !important}
+
+/* ---- dark sections -> light + airy (the whole point of C) ---- */
+.hero,.founder,.final,.contact,.painsec{background:#fff !important;color:var(--body) !important}
+.hero.has-photo{background-image:none !important}
+.founder::after,.contact::after{display:none !important}
+.hero h1,.founder blockquote,.final h2,.contact h2{color:var(--ink) !important;text-shadow:none !important}
+.hero h1 em,.hero h1 .u{color:var(--cyan-deep) !important}
+.hero .eyebrow,.founder .eyebrow,.final .eyebrow,.contact .eyebrow{color:var(--cyan-deep) !important}
+.hero p,.hero__sub,.founder p,.founder cite,.final p,.contact p{color:var(--body) !important;text-shadow:none !important}
+.founder cite b{color:var(--ink) !important}
+.final .micro{color:var(--muted) !important}
+.contact .points li{color:var(--ink) !important;border-top:1px solid var(--line);padding-top:11px;padding-bottom:11px}
+.contact .points li::before{display:none !important}
+.hero .btn--white,.final .btn--white,.contact .btn--white{background:var(--ink) !important;color:#fff !important}
+
+/* founder photo frame calm */
+.founder__img{box-shadow:none !important;border:1px solid var(--line) !important;border-radius:10px !important}
+
+/* ---- funnel line (indigo pill) -> light bordered ---- */
+.funnelline{background:#fff !important;border:1px solid var(--line) !important;border-radius:12px !important;color:var(--ink) !important;box-shadow:none !important}
+.funnelline .fn{color:var(--cyan-deep) !important}
+.funnelline .fa{color:var(--muted) !important}
+.funnelline .ft{color:var(--body) !important}
+.funnelline .cap{color:var(--muted) !important}
+
+/* ---- cards -> minimal hairline ---- */
+.why,.model,.sl,.step,.case,.cs,.pcard,.calc-card,.testi,.qcard{background:#fff !important;border:1px solid var(--line) !important;border-radius:10px !important}
+.pain{background:#fff !important;border:1px solid var(--line) !important;border-left:2px solid var(--cyan) !important;border-radius:10px !important}
+.chip{border:1px solid var(--line-2) !important;background:#fff !important;color:var(--ink) !important}
+.why .ic{background:var(--bg-tint) !important}
+.step{border-top:none !important;border:1px solid var(--line) !important;border-radius:10px !important}
+
+/* SELLER rail letters -> light ink */
+.sl .ltr{color:var(--ink) !important;font-weight:300 !important}
+.sl .nm{color:var(--body) !important}
+
+/* pricing feature card (global talent) -> single ink emphasis card */
+.model.feature{background:var(--ink) !important;color:#fff !important;border:none !important}
+.model.feature h3,.model.feature .price,.model.feature .price small{color:#fff !important}
+.model.feature .pill{background:rgba(255,255,255,.16) !important;color:#fff !important}
+.model.feature li{color:rgba(255,255,255,.92) !important;border-color:rgba(255,255,255,.16) !important}
+.model.feature li::before{border-color:var(--cyan) !important}
+
+/* pullquote (indigo) -> ink minimal, cyan rule */
+.pullquote{background:#fff !important;border:1px solid var(--line) !important;border-left:2px solid var(--cyan) !important;box-shadow:none !important}
+.pullquote blockquote{color:var(--ink) !important}
+.pullquote .src{color:var(--body) !important}
+.pullquote .src b{color:var(--ink) !important}
+
+/* mid-page feature img + figures: calm corners */
+.feature__img,.figframe,.teamsplit__img,.story__img,.person__img{box-shadow:none !important;border-radius:10px !important}
+.feature.tintbg{background:var(--bg-tint) !important}
+
+/* proof band */
+.proof .n{color:var(--ink) !important;font-family:'Manrope' !important;font-weight:500 !important}
+.proof .n em{color:var(--cyan-deep) !important}
+
+/* details / FAQ */
+details summary{color:var(--ink) !important;font-family:'Manrope' !important;font-weight:600 !important}
+details summary::after{color:var(--cyan-deep) !important}
+
+/* nav */
+.logo{font-family:'Manrope' !important;font-weight:700 !important;color:var(--ink) !important}
+.logo b{color:var(--cyan-deep) !important}
+.nav__links>li>a,.nav__item>span{color:var(--body) !important}
+.nav__links>li>a:hover,.nav__item:hover>span{color:var(--ink) !important;background:transparent !important}
+
+/* team person role accent */
+.person__r{color:var(--cyan-deep) !important}
+.person__ph{background:var(--bg-tint) !important;color:var(--muted) !important}
+
+/* NOTE: .photoband (bottom full-bleed photo bands) intentionally left as-is
+   (dark overlay + white text) - it reads fine and keeps one photo moment. */
