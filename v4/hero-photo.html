@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Sales Recruiting Firm | Hire Top Sales Talent | Sellers Hub</title>
+<meta name="description" content="Sellers Hub is a sales-only recruitment firm. Hire high-performing sales talent through U.S. retained search and global talent solutions, onshore and offshore, for B2B teams that need pipeline and revenue.">
+<meta property="og:title" content="Sellers Hub — Sales Talent That Moves the Needle">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b1b30; --indigo:#333366; --cyan:#33CCCC; --cyan-deep:#12938f;
+    --paper:#ffffff; --off:#F5F6F9; --body:#57576a; --muted:#9a9aac; --line:#E9E9F1; --line-2:#DEDEE8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',system-ui,sans-serif;color:var(--body);background:var(--paper);line-height:1.72;font-size:16.5px;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+  h1,h2,h3{font-family:'Manrope',sans-serif;color:var(--ink);font-weight:500;line-height:1.04;letter-spacing:-.03em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 40px}
+  .measure{max-width:60ch}
+  .eyebrow{font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan-deep)}
+  .rule{height:1px;background:var(--line);border:0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:'Manrope';font-weight:600;font-size:14.5px;padding:15px 28px;border-radius:7px;border:1px solid transparent;cursor:pointer;transition:transform .16s,background .2s,color .2s,border-color .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn--ink{background:var(--ink);color:#fff}.btn--ink:hover{background:#2b2b48}
+  .btn--out{background:transparent;border-color:var(--line-2);color:var(--ink)}.btn--out:hover{border-color:var(--ink)}
+  .btn--block{width:100%}
+  .tl{font-weight:600;font-size:14.5px;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+  .tl .ar{color:var(--cyan-deep);transition:transform .2s}
+  .tl:hover .ar{transform:translateX(4px)}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav__row{display:flex;align-items:center;justify-content:space-between;height:80px;gap:22px}
+  .logo{font-family:'Manrope';font-weight:700;font-size:20px;color:var(--ink);letter-spacing:-.02em;display:flex;align-items:center}
+  .logo b{color:var(--cyan-deep)}
+  .nav__links{display:flex;align-items:center;gap:4px;list-style:none}
+  .nav__links>li>a,.nav__item>span{display:inline-flex;align-items:center;gap:6px;padding:10px 13px;border-radius:6px;font-size:14.5px;font-weight:500;color:var(--body);cursor:pointer}
+  .nav__links>li>a:hover,.nav__item:hover>span{color:var(--ink)}
+  .nav__item{position:relative}
+  .nav__item>span::after{content:"";width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.5}
+  .dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 24px 60px rgba(27,27,48,.10);padding:12px;min-width:280px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.18s;z-index:70}
+  .nav__item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+  .dropdown .grp{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:9px 12px 6px;font-weight:600}
+  .dropdown a{display:block;padding:9px 12px;border-radius:6px;color:var(--ink);font-weight:600;font-size:14px}
+  .dropdown a span{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+  .dropdown a:hover{background:var(--off)}
+  .nav__cta{display:flex;align-items:center;gap:14px}
+  .nav__burger{display:none;width:42px;height:42px;border:1px solid var(--line-2);border-radius:7px;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .nav__burger span{width:18px;height:2px;background:var(--ink)}
+  @media(max-width:1060px){
+    .nav__burger{display:flex}
+    .nav__links{position:fixed;inset:80px 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;background:#fff;border-bottom:1px solid var(--line);padding:16px 24px 26px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.2s;max-height:calc(100vh - 80px);overflow:auto}
+    .nav__links.open{transform:translateY(0);opacity:1;visibility:visible}
+    .nav__links>li>a,.nav__item>span{padding:14px 12px;font-size:16px}
+    .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:1px solid var(--line-2);border-radius:0;margin:0 0 8px 14px;padding:4px 0 4px 10px;min-width:0}
+  }
+
+  /* hero: split with team photo (minimalist) */
+  .hero{padding:88px 0 84px}
+  .hero__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+  .hero .eyebrow{display:block;margin-bottom:26px}
+  .hero h1{font-size:clamp(40px,4.9vw,68px);font-weight:500;line-height:1.02;letter-spacing:-.035em}
+  .hero h1 .u{border-bottom:2px solid var(--cyan);padding-bottom:.04em}
+  .hero__sub{font-size:19px;line-height:1.6;color:var(--body);max-width:52ch;margin:30px 0 36px;font-weight:400}
+  .hero__cta{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .hero__note{margin-top:26px;font-size:13.5px;color:var(--muted)}
+  .hero__photo{border-radius:14px;overflow:hidden;aspect-ratio:5/4.3;border:1px solid var(--line)}
+  .hero__photo img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:900px){.hero__grid{grid-template-columns:1fr;gap:34px}.hero__photo{order:-1;aspect-ratio:16/10}}
+
+  /* stats: plain text, no boxes (Riviera) */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding:52px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stat .n{font-family:'Manrope';font-weight:500;font-size:clamp(38px,4.4vw,56px);color:var(--ink);line-height:1;letter-spacing:-.03em}
+  .stat .n em{font-style:normal;color:var(--cyan-deep)}
+  .stat .l{font-size:14px;color:var(--body);margin-top:14px;max-width:22ch;line-height:1.5}
+  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr;gap:34px 24px}}
+
+  /* logo row: quiet */
+  .logos{padding:44px 0;border-bottom:1px solid var(--line)}
+  .logos__lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;font-weight:600}
+  .logos__row{display:flex;align-items:center;gap:52px;flex-wrap:wrap}
+  .logos__row .txt{font-weight:700;font-size:17px;color:var(--muted)}
+  .logos__row img{max-height:26px;max-width:120px;width:auto;filter:grayscale(1);opacity:.55;transition:filter .3s,opacity .3s}
+  .logos__row a:hover img,.logos__row img:hover{filter:none;opacity:1}
+
+  section{padding:118px 0}
+  .off{background:var(--off)}
+  .lead{max-width:62ch;margin-bottom:60px}
+  .lead.ctr{margin-left:auto;margin-right:auto;text-align:center}
+  .lead .eyebrow{display:block;margin-bottom:20px}
+  .lead h2{font-size:clamp(32px,4.4vw,54px);line-height:1.02;font-weight:500;letter-spacing:-.03em;margin-bottom:20px}
+  .lead p{font-size:18px;color:var(--body)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .chip{font-size:13.5px;font-weight:500;color:var(--ink);border:1px solid var(--line-2);border-radius:100px;padding:8px 16px}
+
+  /* numbered columns (Uru/Kvant), type-led */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .col{background:var(--paper);padding:40px 34px;transition:background .2s}
+  .col:hover{background:var(--off)}
+  .col .idx{font-size:13px;font-weight:600;color:var(--cyan-deep);letter-spacing:.1em}
+  .col h3{font-size:23px;font-weight:600;margin:18px 0 10px;letter-spacing:-.02em}
+  .col p{font-size:14.5px;color:var(--body);margin-bottom:20px}
+  @media(max-width:820px){.cols{grid-template-columns:1fr}}
+
+  /* process: numbered, hairline rows */
+  .steps{border-top:1px solid var(--line)}
+  .step{display:grid;grid-template-columns:80px 1fr;gap:30px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .step .sn{font-size:15px;font-weight:600;color:var(--cyan-deep);letter-spacing:.08em}
+  .step h3{font-size:20px;font-weight:600;margin-bottom:6px;letter-spacing:-.02em}
+  .step p{font-size:15px;color:var(--body);max-width:70ch}
+  .funnel{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:50px}
+  .funnel .fn{font-family:'Manrope';font-weight:500;font-size:clamp(34px,4vw,50px);color:var(--ink);letter-spacing:-.03em}
+  .funnel .fa{color:var(--cyan-deep);font-size:20px}
+  .funnel .ft{font-size:14px;color:var(--body)}
+  .funnel .cap{flex-basis:100%;font-size:15px;color:var(--muted);margin-top:12px}
+  @media(max-width:600px){.step{grid-template-columns:1fr;gap:6px}}
+
+  /* SELLER: minimal row */
+  .seller{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sl{padding:34px 20px 34px 0;border-right:1px solid var(--line)}
+  .sl:last-child{border-right:none}
+  .sl .ltr{font-family:'Manrope';font-weight:300;font-size:52px;color:var(--ink);line-height:1;letter-spacing:-.04em}
+  .sl .nm{font-size:12.5px;font-weight:500;color:var(--body);margin-top:14px;line-height:1.4}
+  @media(max-width:880px){.seller{grid-template-columns:repeat(3,1fr)}.sl{border-bottom:1px solid var(--line)}.sl:nth-child(3n){border-right:none}}
+  @media(max-width:480px){.seller{grid-template-columns:1fr 1fr}.sl:nth-child(3n){border-right:1px solid var(--line)}.sl:nth-child(2n){border-right:none}}
+
+  /* split (global, team, founder) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:40px}}
+  .bignum{font-family:'Manrope';font-weight:400;font-size:clamp(66px,9vw,120px);color:var(--ink);line-height:.9;letter-spacing:-.04em}
+  .bignum em{font-style:normal;color:var(--cyan-deep)}
+  .figframe{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--off)}
+  .figframe.tall{aspect-ratio:4/5}
+  .figframe img{width:100%;height:100%;object-fit:cover}
+
+  /* founder */
+  .founder blockquote{font-family:'Manrope';font-weight:400;font-size:clamp(24px,3vw,36px);color:var(--ink);line-height:1.28;letter-spacing:-.02em;margin-bottom:24px}
+  .founder cite{font-style:normal;font-size:15px;color:var(--muted);display:block}
+  .founder cite b{color:var(--ink);font-weight:600}
+
+  /* reviews: quotes as plain text */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+  .qc blockquote{font-family:'Manrope';font-weight:400;font-size:18px;line-height:1.55;color:var(--ink);letter-spacing:-.01em;padding-top:24px;border-top:1px solid var(--line-2)}
+  .qc figcaption{margin-top:22px}
+  .qc b{color:var(--ink);font-size:14.5px;font-weight:600;display:block;line-height:1.3}
+  .qc span{font-size:13px;color:var(--muted)}
+  .qc .src{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-deep);font-weight:600;margin-top:10px;display:block}
+  @media(max-width:820px){.quotes{grid-template-columns:1fr;gap:36px}}
+
+  /* contact */
+  .contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+  .contact h2{font-size:clamp(32px,4.2vw,52px);font-weight:500;letter-spacing:-.03em;margin-bottom:20px}
+  .contact p{font-size:18px;margin-bottom:26px}
+  .points{list-style:none;margin-top:28px}
+  .points li{padding:11px 0;border-top:1px solid var(--line);font-size:15px;color:var(--ink)}
+  .bookrow{display:flex;align-items:center;gap:14px;margin:26px 0}
+  .bookrow img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+  .bookrow b{color:var(--ink);display:block;font-weight:600;font-size:15px}
+  .bookrow span{font-size:13px;color:var(--muted)}
+  .formcard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:34px}
+  .formcard h3{color:var(--ink);font-size:19px;font-weight:600;margin-bottom:3px}
+  .toggle{display:flex;background:var(--off);border-radius:8px;padding:4px;margin:16px 0 18px}
+  .toggle button{flex:1;border:0;background:transparent;font-family:'Manrope';font-weight:600;font-size:13px;color:var(--muted);padding:11px;border-radius:6px;cursor:pointer}
+  .toggle button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,27,48,.08)}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line-2);border-radius:7px;font-family:'Manrope';font-size:14.5px;color:var(--ink);background:#fff}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--ink)}
+  .fine{font-size:11.5px;color:var(--muted);text-align:center;margin-top:11px}
+  @media(max-width:860px){.contact__grid{grid-template-columns:1fr;gap:40px}}
+
+  footer{padding:60px 0 40px;border-top:1px solid var(--line)}
+  .foot__top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px}
+  .foot__brand p{font-size:14px;max-width:300px;margin:14px 0 16px;color:var(--body)}
+  .foot__brand .call{color:var(--ink);font-weight:600;font-size:17px}
+  .foot__top h4{color:var(--ink);font-size:11px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px;font-weight:600}
+  .foot__top a{display:block;font-size:14px;padding:6px 0;color:var(--body)}
+  .foot__top a:hover{color:var(--cyan-deep)}
+  .foot__bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+  .mock-banner{background:var(--ink);color:#fff;text-align:center;font-size:12.5px;padding:9px;letter-spacing:.02em;font-weight:600}
+  .mock-banner a{color:var(--cyan);text-decoration:none;border-bottom:1px solid var(--cyan)}
+
+  /* motion: transform-only, never hides content */
+  @keyframes shRise{from{transform:translateY(14px)}to{transform:none}}
+  @keyframes shScroll{from{transform:translateY(38px)}to{transform:none}}
+  @media (prefers-reduced-motion: no-preference){
+    .lead,.stat,.col,.step,.sl,.split,.qc,.funnel,.formcard{animation:shRise .6s ease both}
+    @supports (animation-timeline: view()){
+      .lead,.stat,.col,.step,.sl,.split,.qc,.funnel,.formcard{animation:shScroll linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
+    }
+  }
+</style>
+</head>
+<body>
+<div class="mock-banner">MOCKUP &middot; <b>DESIGN C &mdash; HERO WITH TEAM PHOTO</b> &middot; vs the <a href="index.html">type-only hero</a> &middot; compare: <a href="../index.html">A</a> &middot; <a href="../v3/index.html">B</a></div>
+
+<header class="nav">
+  <div class="wrap nav__row">
+    <a class="logo" href="index.html">Sellers Hub<b>.</b></a>
+    <ul class="nav__links" id="navlinks">
+      <li class="nav__item"><span>Find Talent</span>
+        <div class="dropdown">
+          <div class="grp">By industry</div>
+          <a href="manufacturing.html">Manufacturing<span>Producers, sales engineers, VP Sales</span></a>
+          <a href="commercial-insurance.html">Commercial Insurance<span>Producers for PE-backed brokerages</span></a>
+          <a href="b2b-tech-saas.html">B2B Tech &amp; SaaS<span>SDR, AE, CS, RevOps, GTM</span></a>
+          <div class="grp">By model</div>
+          <a href="us-sales-recruitment.html">U.S. Retained Search<span>Onshore leaders &amp; producers</span></a>
+        </div>
+      </li>
+      <li><a href="global-talent-solutions.html">Global Talent Solutions</a></li>
+      <li><a href="success-stories.html">Success Stories</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
+      <li><a href="for-job-seekers.html">Find a Job</a></li><li class="nav__item"><span>Hiring Hub</span>
+        <div class="dropdown">
+          <a href="blog.html">Blog<span>What's working in sales hiring</span></a>
+          <a href="how-to-vet-a-global-talent-recruiting-partner.html">Guides<span>Vetting a partner, retained vs contingent, offshore SDRs</span></a>
+          <a href="global-talent-roi-calculator.html">ROI Calculator<span>What offshore talent saves you</span></a>
+          <a href="faqs.html">FAQs<span>Straight answers on process, pricing, guarantees</span></a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://calendly.com/virginia-bowers/initial-meeting" target="_blank" rel="noopener" class="btn btn--ink" style="padding:11px 22px">Book a call</a>
+      <button class="nav__burger" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO (type-only) -->
+<section class="hero" id="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="eyebrow">Sales-only recruitment &middot; Onshore + Offshore</span>
+      <h1>Sales talent that moves the <span class="u">needle.</span></h1>
+      <p class="hero__sub">We place high-performing sales professionals, onshore in the U.S. and offshore globally, for B2B companies that need pipeline and closed deals. Not generalists who took the seat.</p>
+      <div class="hero__cta">
+        <a href="https://calendly.com/virginia-bowers/initial-meeting" target="_blank" rel="noopener" class="btn btn--ink">Book a discovery call</a>
+        <a href="#contact" class="tl">or send us the role <span class="ar">&rarr;</span></a>
+      </div>
+      <p class="hero__note">A 20-minute call with our founder, Virginia. No obligation.</p>
+    </div>
+    <div class="hero__photo"><img src="img/cancun-team.jpg" alt="The Sellers Hub team"></div>
+  </div>
+</section>
+
+<!-- STATS (plain text) -->
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">9 / 10</div><div class="l">clients return for a second search</div></div>
+    <div class="stat"><div class="n">80<em>%</em>+</div><div class="l">of placements hit 90%+ of first-year budget</div></div>
+    <div class="stat"><div class="n">10<em>+</em></div><div class="l">years connecting people in sales</div></div>
+    <div class="stat"><div class="n">~19.7<em>k</em></div><div class="l">sales leaders follow us on LinkedIn</div></div>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="wrap">
+    <div class="logos__lab">Trusted by B2B sales teams in manufacturing, insurance &amp; tech</div>
+    <div class="logos__row">
+      <span class="txt">Axiom</span>
+      <img src="img/logos/bluecargo.svg" alt="BlueCargo">
+      <img src="img/logos/bystronic.svg" alt="Bystronic">
+      <img src="img/logos/horn.svg" alt="Horn">
+      <img src="img/logos/novahavens.png" alt="Nova Havens">
+      <img src="img/logos/paxiom.png" alt="Paxiom">
+      <img src="img/logos/rocket.png" alt="Rocket Software">
+    </div>
+  </div>
+</div>
+
+<!-- SERVE -->
+<section id="serve">
+  <div class="wrap">
+    <div class="lead">
+      <span class="eyebrow">Who we build for</span>
+      <h2>Sales recruitment for the roles that carry your revenue.</h2>
+      <p>Sellers Hub is sales-only. We recruit across the full go-to-market org, from a single producer to a whole team, for B2B companies that live and die by pipeline.</p>
+      <div class="chips"><span class="chip">SDRs &amp; BDRs</span><span class="chip">Account Executives</span><span class="chip">Sales Managers</span><span class="chip">Directors &amp; VPs</span><span class="chip">Customer Success</span><span class="chip">RevOps</span><span class="chip">Insurance Producers</span></div>
+    </div>
+    <div class="cols">
+      <div class="col"><div class="idx">01</div><h3>Manufacturing</h3><p>Producers, sales engineers, and VP Sales for global manufacturers and PE-backed platforms.</p><a href="manufacturing.html" class="tl">Explore manufacturing <span class="ar">&rarr;</span></a></div>
+      <div class="col"><div class="idx">02</div><h3>Commercial Insurance</h3><p>High-performing producers for super-regional, PE-backed brokerages.</p><a href="commercial-insurance.html" class="tl">Explore insurance <span class="ar">&rarr;</span></a></div>
+      <div class="col"><div class="idx">03</div><h3>B2B Tech &amp; SaaS</h3><p>SDRs, AEs, CS, RevOps, and GTM hires for B2B SaaS and AI companies.</p><a href="b2b-tech-saas.html" class="tl">Explore B2B tech <span class="ar">&rarr;</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE (text-only, centered) -->
+<section class="off">
+  <div class="wrap">
+    <div class="lead ctr">
+      <span class="eyebrow">Inside Sellers Hub</span>
+      <h2>Operators who pick up the phone.</h2>
+      <p>A team that has carried a quota, working your search like the outbound motion it is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="lead"><span class="eyebrow">How it works</span><h2>Sales recruitment, run like an outbound motion.</h2><p>We don't wait for applicants. We map the market and reach the passive talent that isn't on job boards, the way you'd run an outbound motion.</p></div>
+    <div class="steps">
+      <div class="step"><div class="sn">01</div><div><h3>Briefing</h3><p>A 45 to 60 minute call to align on the role, comp, and exact profile.</p></div></div>
+      <div class="step"><div class="sn">02</div><div><h3>Market mapping</h3><p>We map every viable seller in your market, on job boards or not.</p></div></div>
+      <div class="step"><div class="sn">03</div><div><h3>Outreach</h3><p>A multi-channel sequence across phone, LinkedIn, email, and text.</p></div></div>
+      <div class="step"><div class="sn">04</div><div><h3>SELLER assessment</h3><p>A two-step interview scoring every candidate against the framework.</p></div></div>
+      <div class="step"><div class="sn">05</div><div><h3>Shortlist</h3><p>A qualified shortlist, interview coordination, and offer support to start date.</p></div></div>
+    </div>
+    <div class="funnel">
+      <span class="fn">100</span><span class="fa">&rarr;</span><span class="ft">candidates mapped</span>
+      <span class="fa">&rarr;</span><span class="fn">3&ndash;5</span><span class="ft">finalists you meet</span>
+      <span class="fa">&rarr;</span><span class="fn">1</span><span class="ft">hire that performs</span>
+      <span class="cap">We don't send you 40 resumes. We send you the one who closes.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SELLER -->
+<section class="off">
+  <div class="wrap">
+    <div class="lead"><span class="eyebrow">How we vet</span><h2>How we vet sales talent: the SELLER framework.</h2><p>Six traits that predict sales performance. We score each candidate across all six, and show you a rounded professional, not a number on a resume.</p></div>
+    <div class="seller">
+      <div class="sl"><div class="ltr">S</div><div class="nm">Sales Performance</div></div>
+      <div class="sl"><div class="ltr">E</div><div class="nm">Expertise &amp; Industry Knowledge</div></div>
+      <div class="sl"><div class="ltr">L</div><div class="nm">Learning Agility</div></div>
+      <div class="sl"><div class="ltr">L</div><div class="nm">Likability &amp; Relationships</div></div>
+      <div class="sl"><div class="ltr">E</div><div class="nm">Execution &amp; Grit</div></div>
+      <div class="sl"><div class="ltr">R</div><div class="nm">Role Fit &amp; Alignment</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL TEASER -->
+<section id="global">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Global Talent Solutions</span>
+        <h2 style="font-size:clamp(30px,4vw,46px);font-weight:500;letter-spacing:-.03em;margin:20px 0 18px">Build a global sales team at a fraction of U.S. cost.</h2>
+        <p style="font-size:18px;margin-bottom:28px;max-width:52ch">Vetted offshore SDRs, AEs, CSMs, and RevOps for B2B SaaS and tech, the same SELLER vetting, applied offshore. Run your numbers, then book a call.</p>
+        <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap">
+          <a href="global-talent-solutions.html" class="btn btn--ink">Explore Global Talent &rarr;</a>
+          <a href="global-talent-roi-calculator.html" class="tl">Calculate your savings <span class="ar">&rarr;</span></a>
+        </div>
+      </div>
+      <div>
+        <div class="bignum">60&ndash;80<em>%</em></div>
+        <div style="font-size:15px;color:var(--body);margin-top:16px;max-width:34ch">typical salary reduction vs. a U.S. hire, with the same vetting bar</div>
+        <a href="how-to-vet-a-global-talent-recruiting-partner.html" class="tl" style="margin-top:22px">Read: how to vet a global partner <span class="ar">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="off founder">
+  <div class="wrap">
+    <div class="split">
+      <div class="figframe tall"><img loading="lazy" decoding="async" src="https://sellershub.com/wp-content/uploads/2024/07/LindseyMcAlisterPhoto-0042-scaled.jpg" alt="Virginia Bowers, Founder of Sellers Hub"></div>
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:20px">Operators, not resume-shufflers</span>
+        <blockquote>"We've carried a quota. That's why we recognize the people who can do it, and screen out the ones who can't."</blockquote>
+        <cite><b>Virginia Bowers</b> &middot; Founder &amp; CEO &middot; multiple-time President's Club winner</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:20px">Our team</span>
+        <h2 style="font-size:clamp(30px,3.8vw,48px);font-weight:500;letter-spacing:-.03em;margin-bottom:18px">Operators who've carried a quota.</h2>
+        <p style="font-size:18px;margin-bottom:30px;max-width:48ch">A sales-only team that finds the people who can do the job, because we have done it ourselves. Real operators, not resume-shufflers.</p>
+        <a href="who-we-are.html" class="btn btn--out">Meet the team &rarr;</a>
+      </div>
+      <div class="figframe"><img loading="lazy" decoding="async" src="img/photos/sh-06.jpg" alt="The Sellers Hub team"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="off" id="reviews">
+  <div class="wrap">
+    <div class="lead"><span class="eyebrow">What clients say</span><h2>Results that matter, in our clients' words.</h2><p>Real reviews from the leaders who trusted us with a hire.</p></div>
+    <div class="quotes">
+      <figure class="qc">
+        <blockquote>Sellers Hub is the team you want in your corner. They offer individualized attention while still delivering high-quality, fast-paced results.</blockquote>
+        <figcaption><b>Senior Director, Talent Acquisition &amp; HR Strategy</b><span>Top-20 U.S. Insurance Brokerage</span><span class="src">Client</span></figcaption>
+      </figure>
+      <figure class="qc">
+        <blockquote>She exceeds expectations every single time, quickly learns the culture of your company, and only sends the best candidates for the role. She has solved the impossible for us.</blockquote>
+        <figcaption><b>Denise Butler</b><span>COO, Verb Technology</span><span class="src">LinkedIn</span></figcaption>
+      </figure>
+      <figure class="qc">
+        <blockquote>Arianna quickly grasped our business needs and turned them into a targeted recruitment strategy. Her thorough evaluation process saved me valuable time and surfaced candidates who fit our culture.</blockquote>
+        <figcaption><b>Chad W.</b><span>Business owner</span><span class="src">Yelp</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact__grid">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:20px">Start a search</span>
+        <h2>Book a call with Virginia.</h2>
+        <p>A 20-minute discovery call with our founder to scope the role. No pitch, no obligation, just a straight read on whether we can fill it.</p>
+        <div class="bookrow">
+          <img loading="lazy" decoding="async" src="https://sellershub.com/wp-content/uploads/2026/04/virginia.webp" alt="Virginia Bowers, Founder of Sellers Hub">
+          <div><b>Virginia Bowers</b><span>Founder &amp; CEO</span></div>
+        </div>
+        <a href="https://calendly.com/virginia-bowers/initial-meeting" target="_blank" rel="noopener" class="btn btn--ink">Book a discovery call &rarr;</a>
+        <ul class="points"><li>You speak with the founder, not a junior rep</li><li>SELLER-scored finalists, not resume stacks</li><li>120-day replacement guarantee on retained hires</li></ul>
+      </div>
+      <form class="formcard" onsubmit="return false">
+        <h3>Not ready to talk?</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:0">Send us the role and we'll reply within 24 hours.</p>
+        <div class="toggle"><button class="on" type="button">I'm hiring</button><button type="button">I'm looking for a role</button></div>
+        <div class="field"><label>Full name</label><input type="text" placeholder="Jane Smith"></div>
+        <div class="field"><label>Work email</label><input type="email" placeholder="jane@company.com"></div>
+        <div class="field"><label>Company</label><input type="text" placeholder="Company name"></div>
+        <div class="field"><label>What are you hiring?</label>
+          <select><option>Sales leadership (VP, Director)</option><option>Producers / Account Executives</option><option>Offshore SDR / BDR team</option><option>RevOps / CS / GTM Engineer</option><option>Not sure yet, let's talk</option></select>
+        </div>
+        <button class="btn btn--ink btn--block" style="margin-top:6px">Send the details</button>
+        <p class="fine">We only take on searches we can win.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <a class="logo" href="index.html">Sellers Hub<b>.</b></a>
+        <p>Sales Talent That Moves the Needle, Onshore or Offshore. A sales-only recruitment firm for B2B companies.</p>
+        <a href="tel:+18556735537" class="call">1-855-673-5537</a>
+      </div>
+      <div><h4>What We Do</h4><a href="us-sales-recruitment.html">U.S. Retained Search</a><a href="global-talent-solutions.html">Global Talent Solutions</a><a href="manufacturing.html">Manufacturing</a><a href="commercial-insurance.html">Commercial Insurance</a><a href="b2b-tech-saas.html">B2B Tech &amp; SaaS</a></div>
+      <div><h4>Company</h4><a href="who-we-are.html">Who We Are</a><a href="success-stories.html">Success Stories</a><a href="#contact">Contact</a><a href="for-job-seekers.html">Find a Job</a></div>
+      <div><h4>Hiring Hub</h4><a href="blog.html">Blog</a><a href="how-to-vet-a-global-talent-recruiting-partner.html">Guides</a><a href="global-talent-roi-calculator.html">ROI Calculator</a></div>
+    </div>
+    <div class="foot__bottom"><span>&copy; 2026 Sellers Hub &middot; Connecting people for over 10 years</span><span>Sales-only recruitment &middot; Onshore + Offshore</span></div>
+  </div>
+</footer>
+</body>
+</html>
